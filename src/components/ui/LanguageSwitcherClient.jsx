@@ -28,7 +28,7 @@ export default function LanguageSwitcherClient({ currentLocale }) {
     <button
       onClick={switchLanguage}
       disabled={isPending || isLoading}
-      className="btn btn-light border border-secondary-subtle shadow-sm rounded-circle position-relative d-flex align-items-center justify-content-center me-3"
+      className="btn btn-light border border-secondary-subtle shadow-sm rounded-circle position-relative d-flex align-items-center justify-content-center mx-3"
       style={{
         width: "44px",
         height: "44px",
