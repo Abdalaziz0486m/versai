@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "title": "مرحبا بالعالم!",
+    "about": "اذهب إلى صفحة حول"
+  },
+  "common": {
+    "switchToEnglish": "English",
+    "language": "اللغة",
+    "loading": "جاري التحميل..."
+  }
+}
