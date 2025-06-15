@@ -28,7 +28,7 @@ export default function LanguageSwitcherClient({ currentLocale }) {
     <button
       onClick={switchLanguage}
       disabled={isPending || isLoading}
-      className="btn btn-light border border-secondary-subtle shadow-sm rounded-circle position-relative d-flex align-items-center justify-content-center"
+      className="btn btn-light border border-secondary-subtle shadow-sm rounded-circle position-relative d-flex align-items-center justify-content-center me-3"
       style={{
         width: "44px",
         height: "44px",
@@ -52,9 +52,9 @@ export default function LanguageSwitcherClient({ currentLocale }) {
 
       {/* شارة اللغة الصغيرة */}
       {!isPending && !isLoading && (
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary ">
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary ">
           {nextLocale.toUpperCase()}
-          <span class="visually-hidden">unread messages</span>
+          <span className="visually-hidden">unread messages</span>
         </span>
       )}
     </button>

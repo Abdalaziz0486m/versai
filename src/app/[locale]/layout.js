@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import BootstrapClient from "@/components/ui/BootstrapConect";
 import Navbar from "@/components/layout/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -25,9 +26,11 @@ export default async function RootLayout({ children, params }) {
     >
       <body className="">
         <NextIntlClientProvider>
-          <BootstrapClient />
-          <Navbar />
-          {children}
+          <ThemeProvider>
+            <BootstrapClient />
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,0 +1,93 @@
+@import "@/app/variables.css";
+
+body{
+    background-color: var(--bg-100);
+    color: var(--text-100);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-200);
+}
+
+p, span, a {
+    color: var(--text-100);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-100) !important;
+}
+a:hover {
+    color: var(--accent-100) !important;
+}
+button {
+    background-color: var(--accent-100);
+    color: var(--text-100);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent-200);
+}
+
+input, textarea {
+    background-color: var(--bg-200);
+    color: var(--text-100);
+    border: 1px solid var(--primary-300);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-100);
+    outline: none;
+}
+
+.card{
+    background-color: var(--bg-300);
+    color: var(--text-100);
+    border: 1px solid var(--primary-200);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-size: 1.5em;
+    color: var(--text-200);
+    background-color: var(--primary-200);
+    margin-bottom: 10px;
+}
+
+.card-body {
+    font-size: 1em;
+    color: var(--text-100);
+}
+
+.card-footer {
+    text-align: right;
+    font-size: 0.9em;
+    color: var(--text-200);
+    background-color: var(--bg-200);
+}
+
+nav {
+    background-color: var(--primary-200);
+    color: var(--text-100);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    color: var(--text-100);
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: var(--accent-100);
+}
+
