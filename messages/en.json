@@ -7,5 +7,22 @@
     "switchToArabic": "العربية",
     "language": "Language",
     "loading": "Loading..."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact Us",
+    "notification": "Notifications",
+    "orders": "Orders",
+    "wishes": "Wishes",
+    "account": "My Account",
+    "logout": "Sign Out",
+    "register": "Register",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password"
+  },
+  "ContactUs": {
+    "title": "Contact Us"
   }
 }

@@ -25,9 +25,10 @@ export default function Home() {
         }
         image="/images/og-home.jpg"
       />
-
-      <h1>{t("title")}</h1>
-      <p>{t("about")}</p>
+      <section className="container text-center my-5">
+        <h1>{t("title")}</h1>
+        <p>{t("about")}</p>
+      </section>
     </>
   );
 }

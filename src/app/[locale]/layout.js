@@ -3,10 +3,10 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import BootstrapClient from "@/components/ui/BootstrapConect";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/layout/navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../globals.css";
+import "../styles/globals.css";
 import FaviconSwitcher from "@/components/ui/FaviconSwitcher";
 
 export const metadata = {
@@ -31,7 +31,7 @@ export default async function RootLayout({ children, params }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className="">
+      <body className="" lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
         <NextIntlClientProvider>
           <ThemeProvider>
             <BootstrapClient />

@@ -57,7 +57,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       whileTap={{ rotate: 90, scale: 0.9 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="btn btn-light border border-secondary-subtle rounded-circle d-flex align-items-center justify-content-center"
+      className="btn-lang rounded-circle d-flex align-items-center justify-content-center"
       title="تغيير الثيم"
       style={{
         width: "42px",

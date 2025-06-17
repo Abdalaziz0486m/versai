@@ -1,0 +1,241 @@
+@import "variables.css";
+
+body {
+  background-color: var(--bg-100);
+  color: var(--text-100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-100);
+}
+
+p,
+span,
+a {
+  color: var(--text-200);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-100);
+}
+
+a:hover {
+  color: var(--accent-200);
+}
+
+button {
+  background-color: var(--accent-200);
+  color: var(--text-100);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-100);
+  color: var(--primary-100);
+}
+
+button:disabled {
+  background-color: var(--primary-200);
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input,
+textarea {
+  background-color: var(--bg-200);
+  color: var(--text-100);
+  border: 1px solid var(--primary-200);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent-100);
+  outline: none;
+}
+
+.card {
+  background-color: var(--bg-200);
+  color: var(--text-100);
+  border: 1px solid var(--primary-300);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--primary-300);
+}
+
+.card-header {
+  font-size: 1.5em;
+  color: var(--text-100);
+  background-color: var(--bg-300);
+  margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 1em;
+  color: var(--text-200);
+}
+
+.card-footer {
+  text-align: right;
+  font-size: 0.9em;
+  color: var(--text-200);
+  background-color: var(--bg-300);
+}
+
+nav {
+  background-color: var(--primary-100);
+  color: var(--text-100);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a.nav-link {
+  color: var(--text-100) !important;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: var(--accent-100) !important;
+}
+
+nav a.active {
+  color: var(--accent-200) !important;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  background-color: var(--bg-200) !important;
+  color: var(--text-100);
+  border: 1px solid var(--primary-300) !important;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dropdown-menu a {
+  color: var(--text-100) !important;
+  width: 100%;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: var(--accent-100) !important;
+  background-color: var(--bg-300) !important;
+}
+
+.btn-lang {
+  background-color: transparent;
+  color: var(--text-100) !important;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-lang:hover {
+  color: var(--accent-100) !important;
+  background-color: transparent;
+}
+
+#mobile-menu {
+  background-color: var(--bg-200);
+  box-shadow: 0 2px 5px var(--primary-300);
+}
+
+/* مثال لـ custom-toggler */
+.custom-toggler .bar {
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  margin: 4px 0;
+  transition: 0.3s ease;
+}
+
+#mobile-menu {
+  background-color: var(--bg-200) !important;
+}
+
+.settings {
+  transform: all 0.5s ease-in-out;
+}
+
+.settings.show {
+  display: inline-block;
+  width: fit-content;
+  min-width: 0;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.settings li {
+  width: fit-content;
+}
+
+/* ملف CSS عمومي، أو داخل component بطريقتك */
+
+
+.transition-icon {
+  display: inline-block;
+  transition: transform 0.4s ease;
+  color: var(--text-100) !important;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+nav{
+  box-shadow: 0 2px 5px var(--shadow-100);
+}
+
+.modal-backdrop{
+  z-index: 1;
+}
+
+.modal-content{
+  background-color: var(--bg-200) !important;
+  color: var(--text-100);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow-200);
+}
+
+.modal-close{
+  color: var(--text-100) !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 1.5em !important;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover{
+  color: red !important;
+}
+
+.modal-icon{
+  color: var(--text-100) !important;
+  border: 1px solid var(--text-100) !important;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.modal-icon i{
+  font-size: 2em !important;
+}
