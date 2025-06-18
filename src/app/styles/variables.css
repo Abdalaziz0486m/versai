@@ -19,9 +19,12 @@ body {
   --bg-100: #ffffff;
   --bg-200: #e3f6f5;
   --bg-300: #bae8e8;
+  --bg-100-50: #ffffff88;
 
-  --shadow-100: rgba(0, 0, 0, 0.1);
-  --shadow-200: rgba(0, 0, 0, 0.2);
+  --shadow-100: #0000001a;
+  --shadow-200: #00000033;
+  --shadow-accent-100: #00a8a866;
+  --shadow-accent-200: #007b7b4d;
 }
 
 [data-theme="dark"] {
@@ -39,9 +42,12 @@ body {
   --bg-100: #000000;
   --bg-200: #1a1a1a;
   --bg-300: #2a2a2a;
+  --bg-100-50: #00000088;
 
   --shadow-100: rgba(255, 255, 255, 0.1);
   --shadow-200: rgba(255, 255, 255, 0.2);
+  --shadow-accent-100: #5ffaf566;
+  --shadow-accent-200: #2cd4d44d;
 }
 
 body[lang="ar"] {

@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import FaviconSwitcher from "@/components/ui/FaviconSwitcher";
+import Search from "@/components/layout/search/Search";
 
 export const metadata = {
   title: "Versai",

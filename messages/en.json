@@ -24,5 +24,19 @@
   },
   "ContactUs": {
     "title": "Contact Us"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "🔍 Search here..."
+  },
+  "productCard": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "price": "Price",
+    "quantity": "Quantity",
+    "description": "Description",
+    "EGP": "E£"
   }
 }
