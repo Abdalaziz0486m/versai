@@ -284,3 +284,7 @@ nav {
   color: var(--text-200) !important;
   transform: scale(1.1);
 }
+
+.hero-section h1, .hero-section p{
+  color: white !important;
+}

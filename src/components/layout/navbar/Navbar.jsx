@@ -70,7 +70,7 @@ const Navbar = () => {
   return (
     <>
       <Search handleSearhPage={handleSearhPage} />
-      <nav className="navbar py-1 ">
+      <nav className="navbar py-0">
         <div className="container position-relative">
           {/* Logo */}
           <Link className="navbar-brand" href="/">
