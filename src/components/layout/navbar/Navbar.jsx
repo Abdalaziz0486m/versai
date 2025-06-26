@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 import Links from "./Links";
 import avatar from "../../../images/avatar_male.webp";
 import NavLink from "./NavLink";
-import Search from "../search/Search";
+import Search from "../Search";
 
 const Navbar = () => {
   const locale = useLocale();
