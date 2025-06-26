@@ -1,7 +1,11 @@
 {
   "HomePage": {
     "title": "Hello world!",
-    "about": "Go to the about page"
+    "about": "Go to the about page",
+    "BestSeller": "Best Seller",
+    "Furniture": "Furniture",
+    "Rugs": "Rugs",
+    "NewArrivals": "New Arrivals"
   },
   "common": {
     "switchToArabic": "العربية",

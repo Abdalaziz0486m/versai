@@ -70,6 +70,24 @@ textarea:focus {
   box-shadow: 0 0 5px var(--shadow-accent-100) !important;
 }
 
+.form-control {
+  background-color: var(--bg-200) !important;
+  color: var(--text-100) !important;
+  border: 1px solid var(--primary-200) !important;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form-control::placeholder {
+  color: var(--text-100) !important;
+}
+
+.form-control:focus {
+  border-color: var(--bg-200) !important;
+  outline: none;
+  box-shadow: 0 0 5px var(--shadow-accent-100) !important;
+}
+
 .card {
   background-color: var(--bg-200);
   color: var(--text-100);
@@ -253,11 +271,12 @@ nav {
   background-color: var(--bg-200);
   color: var(--text-100);
   border: 1px solid var(--primary-300);
+  min-width: max-content;
 }
 
 .product-image img {
   width: 100% !important;
-  height: auto !important;
+  height: 400px !important;
 }
 
 .product-icon-wrapper {
@@ -287,4 +306,30 @@ nav {
 
 .hero-section h1, .hero-section p{
   color: white !important;
+}
+
+.section-title {
+  color: var(--text-100) !important;
+  font-size: 2em;
+  text-align: center;
+  position: relative;
+  margin-bottom: 2em;
+  font-weight: bold ;
+}
+
+.section-title::before{
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: var(--accent-100);
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonialCard{
+  min-height: max-content !important;
 }

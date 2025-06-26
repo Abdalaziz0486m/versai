@@ -1,7 +1,11 @@
 {
   "HomePage": {
     "title": "مرحبا بالعالم!",
-    "about": "اذهب إلى صفحة حول"
+    "about": "اذهب إلى صفحة حول",
+    "BestSeller": "الأكثر مبيعًا",
+    "Furniture": "الأثاث",
+    "Rugs": "السجاد",
+    "NewArrivals": "الوافدون الجدد"
   },
   "common": {
     "switchToEnglish": "English",

@@ -59,9 +59,60 @@ body[lang="ar"] {
   .end-0 {
     left: 0 !important;
     right: auto !important;
+
   }
+  --start: -1em;
+  --end: auto;
 }
 
 body[lang="en"] {
   font-family: "Poppins", sans-serif !important;
+
+  .start-0 {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .end-0 {
+    right: 0 !important;
+    left: auto !important;
+  }
+
+  --start: auto;
+  --end: -1em;
+
 }
+
+
+.container {
+  max-width: 1400px !important;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 800px !important;
+  }
+} 
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100% !important;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+

@@ -1,8 +1,12 @@
 import { useLocale, useTranslations } from "next-intl";
 import SeoHead from "@/components/seo/SeoHead";
-import { useTheme } from "@/contexts/ThemeContext";
 import AdBanner from "@/components/home/AdBanner";
 import Hero from "@/components/home/Hero";
+import BestSeller from "@/components/home/BestSeller";
+import Rugs from "@/components/home/Rugs";
+import NewArrivals from "@/components/home/NewArrivals";
+import Furniture from "@/components/home/Furniture";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   const t = useTranslations("HomePage");
@@ -29,10 +33,11 @@ export default function Home() {
       />
       <AdBanner />
       <Hero />
-      <section className="container text-center my-5">
-        <h1>{t("title")}</h1>
-        <p>{t("about")}</p>
-      </section>
+      <BestSeller />
+      <NewArrivals />
+      <Rugs />
+      <Furniture />
+      <Testimonials />
     </>
   );
 }

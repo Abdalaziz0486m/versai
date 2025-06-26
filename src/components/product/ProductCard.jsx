@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import cardImage from "../../images/card-image.jpg";
+import cardImage from "../../images/card-image.png";
 import Image from "next/image";
 
 const ProductCard = () => {

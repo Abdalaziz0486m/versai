@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "text": {
+      "ar": "🚚 أي أوردر فوق 5000 جنيه التوصيل مجاني",
+      "en": "🚚 Free shipping for orders over EGP 5000"
+    },
+    "bgColor": "bg-primary",
+    "textColor": "text-white"
+  },
+  {
+    "id": 2,
+    "text": {
+      "ar": "🔥 خصم 25% على جميع المنتجات - لفترة محدودة",
+      "en": "🔥 25% off on all products - limited time only"
+    },
+    "bgColor": "bg-danger",
+    "textColor": "text-white"
+  },
+  {
+    "id": 3,
+    "text": {
+      "ar": "⚡ توصيل سريع خلال 24 ساعة داخل القاهرة",
+      "en": "⚡ Fast delivery within 24 hours in Cairo"
+    },
+    "bgColor": "bg-success",
+    "textColor": "text-white"
+  },
+  {
+    "id": 4,
+    "text": {
+      "ar": "💳 ادفع عند الاستلام - خدمة آمنة 100%",
+      "en": "💳 Pay on delivery - 100% safe service"
+    },
+    "bgColor": "bg-warning",
+    "textColor": "text-dark"
+  }
+]
