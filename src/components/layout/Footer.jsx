@@ -1,8 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logoLight from "../../images/logo-light.png";
+import logoDark from "../../images/logo-dark.png";
+import { useTranslations } from "next-intl";
+import { useTheme } from "@/contexts/ThemeContext";
 import {
   FaEnvelope,
   FaPhone,
@@ -13,11 +17,27 @@ import {
   FaSnapchatGhost,
   FaTwitter,
   FaInstagram,
-  FaComments,
 } from "react-icons/fa";
 
 const Footer = () => {
-  const [hoveredSocial, setHoveredSocial] = useState(null);
+  const t = useTranslations("footer");
+  const { theme } = useTheme();
+  const [actualTheme, setActualTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "system") {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setActualTheme(isDark ? "dark" : "light");
+
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleChange = (e) => setActualTheme(e.matches ? "dark" : "light");
+
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
+    } else {
+      setActualTheme(theme);
+    }
+  }, [theme]);
 
   const socialMediaLinks = [
     { icon: FaFacebookF, href: "#", color: "#1877f2", name: "facebook" },
@@ -27,117 +47,58 @@ const Footer = () => {
     { icon: FaTwitter, href: "#", color: "#1da1f2", name: "twitter" },
     { icon: FaInstagram, href: "#", color: "#e4405f", name: "instagram" },
   ];
+
+  const [hoveredSocial, setHoveredSocial] = useState(null);
+
   return (
-    <footer className="  py-5">
+    <footer className="py-5">
       <div className="container">
-        <div className="row justify-content-between align-items-start">
-          {/* Left Section - App Download */}
-          <div className="col-lg-3 col-md-6 mb-4">
-            <h6 className="fw-bold mb-3">تحميل تطبيق الجوال</h6>
-            <div className="d-flex flex-column gap-2">
-              <Link href="#" className="text-decoration-none">
-                <img
-                  src="/api/placeholder/150/50"
-                  alt="Download on Google Play"
-                  className="img-fluid"
-                  style={{ maxWidth: "150px" }}
-                />
-              </Link>
-              <Link href="#" className="text-decoration-none">
-                <img
-                  src="/api/placeholder/150/50"
-                  alt="Download on App Store"
-                  className="img-fluid"
-                  style={{ maxWidth: "150px" }}
-                />
-              </Link>
-            </div>
-
-            {/* Logo and Description */}
-            <div className="mt-4">
-              <div className="d-flex align-items-center mb-2">
-                <div className="text-primary me-2">
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <path d="M20 2L30 12L20 22L10 12L20 2Z" fill="#6f42c1" />
-                    <path
-                      d="M20 18L30 28L20 38L10 28L20 18Z"
-                      fill="#6f42c1"
-                      fillOpacity="0.7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <p className="small mb-0">موثق لدى منصة الأعمال</p>
-            </div>
-          </div>
-
-          {/* Center Section - Brand and Contact */}
-          <div className="col-lg-4 col-md-6 mb-4 text-center">
-            {/* Brand Logo */}
+        <div className="row justify-content-center align-items-start">
+          {/* Center Section */}
+          <div className="col-lg-5 col-md-6 mb-4 text-center">
             <div className="mb-3">
-              <h2
-                className="fw-bold mb-1"
-                style={{ fontSize: "2rem", letterSpacing: "2px" }}
-              >
-                سرداب
-              </h2>
-              <p
-                className="text-uppercase small  mb-0"
-                style={{ letterSpacing: "3px" }}
-              >
-                SERDAB
-              </p>
+              <Image
+                src={actualTheme === "dark" ? logoDark : logoLight}
+                alt="Versai Logo"
+                width={150}
+                height={150}
+              />
             </div>
 
-            {/* Contact Info */}
             <div className="mb-3">
-              <p className=" small mb-1">
-                نسعى جاهدين لتقديم خدمة تميزنا وتحقق رضاكم
-              </p>
-              <p className=" small mb-1">الأعزاء العملاء</p>
-              <p className="fw-bold mb-0">30227465460003</p>
+              <p className="small mb-1">{t("slogan")}</p>
+              <p className="small mb-1">{t("strive")}</p>
+              <p className="fw-bold mb-0">{t("cr")}</p>
             </div>
 
-            {/* Contact Methods */}
             <div className="d-flex justify-content-center gap-3 mb-3">
-              <Link
-                href="mailto:help@serdababaya.com"
-                className="text-decoration-none"
-              >
+              <Link href="mailto:info@versai.com">
                 <div className="d-flex align-items-center">
                   <FaEnvelope className="me-1" />
-                  <span className="small">help@serdababaya.com</span>
+                  <span className="small">info@versai.com</span>
                 </div>
               </Link>
-              <Link href="tel:+966530776754" className="text-decoration-none">
+              <Link href="tel:+201234567890">
                 <div className="d-flex align-items-center">
                   <FaPhone className="me-1" />
-                  <span className="small">+966530776754</span>
+                  <span className="small">+20 123 456 7890</span>
                 </div>
               </Link>
-              <Link
-                href="https://wa.me/966530776754"
-                className="text-decoration-none"
-              >
+              <Link href="https://wa.me/201234567890">
                 <div className="d-flex align-items-center">
                   <FaWhatsapp className="me-1" />
-                  <span className="small">+966530776754</span>
+                  <span className="small">+20 123 456 7890</span>
                 </div>
               </Link>
             </div>
 
-            {/* Social Media Icons */}
             <div className="d-flex justify-content-center gap-2 mb-3">
               {socialMediaLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 const isHovered = hoveredSocial === social.name;
 
                 return (
-                  <Link
-                    key={index}
-                    href={social.href}
-                    className="text-decoration-none"
-                  >
+                  <Link key={index} href={social.href}>
                     <div
                       className="rounded-circle border d-flex align-items-center justify-content-center"
                       style={{
@@ -162,59 +123,12 @@ const Footer = () => {
               })}
             </div>
           </div>
-
-          {/* Right Section - Links */}
-          <div className="col-lg-3 col-md-6 mb-4">
-            <h6 className="fw-bold mb-3">روابط مهمة</h6>
-            <ul className="list-unstyled">
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  سياسة الخصوصية
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  سياسة الطلب والشحن والتوصيل
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  سياسة الاستبدال والاسترجاع
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  المحافظة على الجودة والملاءمة
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  الشبكة التجارية
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="#" className="text-decoration-none small">
-                  المقاسات
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="row mt-4 pt-4 border-top">
-          <div className="col-12 d-flex justify-content-between align-items-center flex-wrap">
-            <div className="d-flex align-items-center mb-2 mb-md-0">
-              <span className=" small">Message us</span>
-              <div
-                className="ms-2 bg-warning rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: "30px", height: "30px" }}
-              >
-                <FaComments style={{ fontSize: "14px" }} />
-              </div>
-            </div>
-            <div className=" small">
-              <span>الدفوع معتمدة | متجر سرداب للعبايات © 2025</span>
+          <div className="col-12 d-flex justify-content-center">
+            <div className="small">
+              <span>{t("rights")}</span>
             </div>
           </div>
         </div>

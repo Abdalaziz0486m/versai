@@ -42,5 +42,20 @@
     "quantity": "Quantity",
     "description": "Description",
     "EGP": "E£"
+  },
+  "footer": {
+    "appTitle": "Download Versai App",
+    "trusted": "Trusted & Officially Registered Store",
+    "storeName": "Versai",
+    "slogan": "Unique rugs & antiques carefully selected",
+    "strive": "We always strive to offer the best",
+    "cr": "Commercial Reg: 1234567890",
+    "contactUs": "Contact Us",
+    "privacy": "Privacy Policy",
+    "shipping": "Shipping & Delivery",
+    "return": "Returns & Exchanges",
+    "sizeGuide": "Size Guide",
+    "chatWithUs": "Message us",
+    "rights": "© 2025 Versai Rugs & Antiques Store | All rights reserved"
   }
 }
