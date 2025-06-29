@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params }) {
             <FaviconSwitcher />
             <Navbar />
             {children}
-            <ProductsSection />
+            {/* <ProductsSection /> */}
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
