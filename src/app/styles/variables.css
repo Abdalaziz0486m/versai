@@ -59,7 +59,6 @@ body[lang="ar"] {
   .end-0 {
     left: 0 !important;
     right: auto !important;
-
   }
   --start: -1em;
   --end: auto;
@@ -80,9 +79,7 @@ body[lang="en"] {
 
   --start: auto;
   --end: -1em;
-
 }
-
 
 .container {
   max-width: 1400px !important;
@@ -101,7 +98,7 @@ body[lang="en"] {
   .container {
     max-width: 800px !important;
   }
-} 
+}
 
 @media (max-width: 768px) {
   .container {
@@ -115,4 +112,3 @@ body[lang="en"] {
     padding: 0 10px;
   }
 }
-
