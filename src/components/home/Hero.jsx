@@ -74,7 +74,7 @@ export default function Hero() {
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="position-relative w-100"
+              className="position-relative w-100 container my-5"
               style={{
                 minHeight: "65vh",
                 maxHeight: "100vh",
