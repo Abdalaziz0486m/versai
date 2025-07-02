@@ -383,6 +383,39 @@ footer {
   cursor: pointer;
 }
 
+
+.DetailsSlider .mySwiper img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.DetailsSlider .mySwiper2{
+  text-align: center;
+}
+
+.DetailsSlider .mySwiper2 img {
+  width: 100% !important;
+  height: 600px !important;
+}
+
+.mySwiper{
+  max-height: 600px !important;
+}
+
+.mySwiper .swiper-wrapper{
+  display: block;
+  overflow-y: hidden !important;
+}
+
+.mySwiper .swiper-wrapper .swiper-slide {
+  width: 100% !important;
+  margin: 0 0 0.5em !important;
+  height: auto !important;
+}
+
+.DetailsSlider .row{
+  /* max-height: 600px;   */
+}
 /* Start Cart */
 
 .sctionCart {
@@ -578,3 +611,4 @@ footer {
 }
 
 /* End Profile */
+

@@ -51,7 +51,7 @@ const Footer = () => {
   const [hoveredSocial, setHoveredSocial] = useState(null);
 
   return (
-    <footer className="py-5">
+    <footer className="py-3">
       <div className="container">
         <div className="row justify-content-center align-items-start">
           {/* Center Section */}
