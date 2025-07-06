@@ -1,3 +1,6 @@
+import { GiSevenPointedStar } from "react-icons/gi";
+import { MdOutlineMessage } from "react-icons/md";
+
 const Cart = () => {
   return (
     <>
@@ -50,7 +53,7 @@ const Cart = () => {
                 <div className="col-12 col-md-4">
                   <p className="fw-bold fs-5 d-flex mb-0">
                     القياس
-                    <i class="fa-solid fa-star-of-life fa-2xs"></i>
+                    <GiSevenPointedStar className="GiSevenPointedStar" />
                   </p>
                   <p className="">اختر</p>
                 </div>

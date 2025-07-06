@@ -383,13 +383,12 @@ footer {
   cursor: pointer;
 }
 
-
 .DetailsSlider .mySwiper img {
   width: 100% !important;
   height: auto !important;
 }
 
-.DetailsSlider .mySwiper2{
+.DetailsSlider .mySwiper2 {
   text-align: center;
 }
 
@@ -398,11 +397,11 @@ footer {
   height: 600px !important;
 }
 
-.mySwiper{
+.mySwiper {
   max-height: 600px !important;
 }
 
-.mySwiper .swiper-wrapper{
+.mySwiper .swiper-wrapper {
   display: block;
   overflow-y: hidden !important;
 }
@@ -413,7 +412,7 @@ footer {
   height: auto !important;
 }
 
-.DetailsSlider .row{
+.DetailsSlider .row {
   /* max-height: 600px;   */
 }
 /* Start Cart */
@@ -446,7 +445,9 @@ footer {
   border-radius: 10px;
 }
 .numCart::before,
-.plusCart::before {
+.plusCart::before,
+.numCart1::before,
+.plusCart1::before {
   content: "";
   position: absolute;
   width: 2px;
@@ -612,3 +613,93 @@ footer {
 
 /* End Profile */
 
+/* Start products */
+
+.avilibaleP {
+  color: #108043;
+  font-size: 18px;
+}
+.numFacture {
+  color: #007b7b;
+}
+.Factures,
+.Factures2 {
+  transition: all 0.5s ease-in-out;
+}
+.Factures2 {
+  border: 1px solid #d6d6d3;
+  border-radius: 10px;
+}
+.Factures:hover,
+.Factures2:hover {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.GiSevenPointedStar {
+  font-size: 7px;
+  color: red;
+}
+.numCart1::before,
+.plusCart1::before {
+  left: -17px;
+}
+.cashBtn {
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .secCart2 {
+    display: block !important;
+  }
+}
+@media (max-width: 769px) {
+  .numCart1::before,
+  .plusCart1::before {
+    left: -6px;
+  }
+}
+
+.allProductDetail::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 140px;
+  background: linear-gradient(to bottom, #007b7b 50%, #e9e9e9 50%);
+  top: 0;
+  left: 25%;
+  border-radius: 5px;
+}
+.greenColor {
+  color: var(--accent-200);
+}
+
+.goldColor {
+  color: #bf9000;
+}
+
+@media (max-width: 991px) {
+  .allProductDetail::after {
+    display: none;
+  }
+  .productDetailBtn {
+    width: 100% !important;
+  }
+  .productDetailBtn1 {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .productDetailBtn2 {
+    display: none;
+  }
+}
+
+/* @media (min-width: 769px) {
+  .productDetail button {
+    all: unset;
+  }
+} */
+
+/* End products */
