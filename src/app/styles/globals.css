@@ -724,3 +724,20 @@ footer {
 }
 
 /* End Wishes */
+
+/* Start Products */
+
+.productSelect{
+  border-radius: 10px;
+}
+
+@media (max-width:769px) {
+  .secRugPage{
+    display: block !important;
+  }
+  .suggistRugPage{
+    justify-content: center !important;
+  }
+}
+
+/* End Products */
