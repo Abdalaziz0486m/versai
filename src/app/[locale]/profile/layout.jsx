@@ -6,6 +6,7 @@ import { SlBasketLoaded } from "react-icons/sl";
 import { CiStar } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
+import { Link } from "@/i18n/navigation";
 export default async function ProfileLayout({ children }) {
   return (
     <>
@@ -37,29 +38,56 @@ export default async function ProfileLayout({ children }) {
           <h2>يوسف محمد</h2>
 
           <ul className="d-flex gap-4 list-unstyled">
-            <li className="d-flex align-items-center liLinksProfile gap-2">
-              <LuBellRing color="#4b5563" className="fs-5" />
-              <a href="">الاشعارات</a>
+            <li className=" liLinksProfile ">
+              <Link
+                href="/profile/notification "
+                className="d-flex align-items-center profileLinks gap-2"
+              >
+                <LuBellRing color="#4b5563" className="fs-5" />
+                الاشعارات
+              </Link>
             </li>
-            <li className="d-flex align-items-center liLinksProfile gap-2">
-              <FaBoxArchive color="#4b5563" />
-              <a href="">الطلبات</a>
+            <li className=" liLinksProfile ">
+              <Link
+                href="orders"
+                className="d-flex align-items-center profileLinks gap-2"
+              >
+                <FaBoxArchive color="#4b5563" />
+                الطلبات
+              </Link>
             </li>
-            <li className="d-flex align-items-center liLinksProfile gap-2">
-              <SlBasketLoaded color="#4b5563" className="fs-5" />
-              <a href="">طلبات بالانتظار الدفع</a>
+            <li className=" liLinksProfile">
+              <Link
+                href="/profile/waitOrders"
+                className="d-flex align-items-center profileLinks gap-2"
+              >
+                <SlBasketLoaded color="#4b5563" className="fs-5" />
+                طلبات بالانتظار الدفع
+              </Link>
             </li>
-            <li className="d-flex align-items-center liLinksProfile gap-2">
-              <CiStar color="#4b5563" className="fs-5" />
-              <a href="">الأمنيات</a>
+            <li className=" liLinksProfile ">
+              <Link
+                href="/profile/wishes"
+                className="d-flex align-items-center profileLinks gap-2"
+              >
+                <CiStar color="#4b5563" className="fs-5" />
+                الأمنيات
+              </Link>
             </li>
-            <li className="d-flex align-items-center liLinksProfile gap-2">
-              <CgProfile color="#4b5563" className="fs-5" />
-              <a href="">حسابي</a>
+            <li className="liLinksProfile">
+              <Link
+                href="/profile"
+                className="d-flex align-items-center profileLinks gap-2"
+              >
+                <CgProfile color="#4b5563" className="fs-5" />
+                حسابي
+              </Link>
             </li>
             <li className="d-flex align-items-center liLinksProfile gap-2">
               <IoIosLogOut color="red" className="fs-5" />
-              <a href="">تسجيل الخروج</a>
+              <a href="" className="profileLinks">
+                تسجيل الخروج
+              </a>
             </li>
           </ul>
         </div>
