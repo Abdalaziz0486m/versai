@@ -1,3 +1,4 @@
+import Testimonials from "@/components/home/Testimonials";
 import ProductCard from "@/components/product/ProductCard";
 
 const SubCategory = () => {
@@ -34,6 +35,7 @@ const SubCategory = () => {
           </div>
         </div>
       </div>
+      <Testimonials />
     </>
   );
 };
