@@ -695,11 +695,31 @@ footer {
     display: none;
   }
 }
-
-/* @media (min-width: 769px) {
-  .productDetail button {
-    all: unset;
-  }
-} */
-
 /* End products */
+
+/* Start Orders */
+
+.borderBox{
+  border-radius: 50%;
+  width: fit-content;
+  padding: 40px;
+  background-color: #f3f4f6;
+}
+.profileLinks{
+  color: #111827 !important;
+}
+
+/* End Orders */
+
+/* Start Wishes */
+
+@media (max-width:769px) {
+  .aboutProduct{
+    display: block !important;
+  }
+  .basKetBtn{
+    margin-top: 10px;
+  }
+}
+
+/* End Wishes */
