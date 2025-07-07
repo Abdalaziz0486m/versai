@@ -1,11 +1,13 @@
 import Image from "next/image";
 import logo from "../../../images/logo-dark.png";
+import profile from "../../../images/avatar_male.webp";
 import { LuBellRing } from "react-icons/lu";
 import { FaBoxArchive } from "react-icons/fa6";
 import { SlBasketLoaded } from "react-icons/sl";
 import { CiStar } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
+import { FaPen } from "react-icons/fa6";
 import { Link } from "@/i18n/navigation";
 export default async function ProfileLayout({ children }) {
   return (
@@ -29,11 +31,22 @@ export default async function ProfileLayout({ children }) {
             />
           </div>
           <div className="container">
-            <div className="divIconPen">
-              <i className="fa-solid fa-pen fa-xl"></i>
+            <div
+              className="divIconPen position-absolute d-flex justify-content-center align-items-center"
+              tabIndex="0"
+            >
+              <Image
+                src={profile}
+                alt="profile"
+                width={100}
+                height={100}
+                className="image-icon"
+              />
+              <FaPen className="pen-icon" />
             </div>
           </div>
         </div>
+
         <div className="container mt-5 borBottom">
           <h2>يوسف محمد</h2>
 
