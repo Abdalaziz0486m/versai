@@ -36,6 +36,7 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
@@ -73,7 +74,7 @@ textarea:focus,
 }
 
 .form-control {
-  background-color: var(--bg-200) !important;
+  background-color: var(--bg-100) !important;
   color: var(--text-100) !important;
   border: 1px solid var(--primary-200) !important;
   padding: 10px;
@@ -81,11 +82,11 @@ textarea:focus,
 }
 
 .form-control::placeholder {
-  color: var(--text-100) !important;
+  color: var(--text-200) !important;
 }
 
 .form-control:focus {
-  border-color: var(--bg-200) !important;
+  border-color: var(--bg-100) !important;
   outline: none;
   box-shadow: 0 0 5px var(--shadow-accent-100) !important;
 }
