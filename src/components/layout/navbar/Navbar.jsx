@@ -44,7 +44,7 @@ const Navbar = () => {
           <Logo />
 
           {/* Desktop Menu */}
-          <DesktopMenu />
+          <DesktopMenu setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
 
           {/* Right Controls */}
           <Controls

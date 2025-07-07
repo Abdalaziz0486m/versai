@@ -1,6 +1,6 @@
 import Links from "./Links";
 
-const DesktopMenu = () => {
+const DesktopMenu = ({ setMenuOpen, menuOpen }) => {
   return (
     <>
       <div className="d-none d-lg-flex justify-content-center ">
