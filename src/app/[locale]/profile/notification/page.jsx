@@ -30,7 +30,9 @@ const Notification = () => {
                 <small className="text-muted">منذ ساعتين</small>
               </div>
             </div>
-            <button className="btn btn-sm btn-outline-danger">مسح</button>
+            <div className="text-start xmarkDiv">
+              <i className="fa-solid fa-circle-xmark fa-xl"></i>
+            </div>
           </li>
 
           <li className="notificationCard d-flex justify-content-between align-items-center p-3 rounded-3 shadow-sm mb-3 bg-light">
@@ -45,7 +47,9 @@ const Notification = () => {
                 <small className="text-muted">منذ يوم</small>
               </div>
             </div>
-            <button className="btn btn-sm btn-outline-danger">مسح</button>
+            <div className="text-start xmarkDiv">
+              <i className="fa-solid fa-circle-xmark fa-xl"></i>
+            </div>
           </li>
         </ul>
 
