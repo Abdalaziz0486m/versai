@@ -33,6 +33,57 @@ const Products = () => {
           <div className="col-xxl-3 col-lg-4 col-sm-6">
             <ProductCard />
           </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
+          </div>
         </div>
       </div>
       <Testimonials />
