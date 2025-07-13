@@ -1,14 +1,14 @@
 import { useTranslations } from "next-intl";
 import ProductSwiper from "../product/BroductSwiper";
 
-const Rugs = () => {
+const Rugs = ({ handleOpen }) => {
   const t = useTranslations("HomePage");
   return (
     <>
       <section className="rugs-section py-5">
         <div className="container">
           <h2 className="section-title">{t("Rugs")}</h2>
-          <ProductSwiper />
+          <ProductSwiper handleOpen={handleOpen} />
         </div>
       </section>
     </>

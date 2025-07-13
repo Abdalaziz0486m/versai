@@ -19,12 +19,26 @@ const Links = ({ setMenuOpen }) => {
         </NavLink>
       </li>
       <li className="nav-item" onClick={handleClick}>
+        <NavLink className="nav-link" href="/products" activeClassName="active">
+          {t("products")}
+        </NavLink>
+      </li>
+      <li className="nav-item" onClick={handleClick}>
         <NavLink
           className="nav-link"
-          href="/contactUs"
+          href="/category/silk"
           activeClassName="active"
         >
-          {t("contact")}
+          {t("silk")}
+        </NavLink>
+      </li>
+      <li className="nav-item" onClick={handleClick}>
+        <NavLink
+          className="nav-link"
+          href="/category/wool"
+          activeClassName="active"
+        >
+          {t("wool")}
         </NavLink>
       </li>
     </>

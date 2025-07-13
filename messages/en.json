@@ -24,7 +24,10 @@
     "register": "Register",
     "login": "Login",
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "products": "Products",
+    "silk": "Silk",
+    "wool": "Wool"
   },
   "ContactUs": {
     "title": "Contact Us"
