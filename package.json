@@ -11,12 +11,19 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "bootstrap": "^5.3.6",
+    "file-saver": "^2.0.5",
     "framer-motion": "^12.18.1",
+    "lodash.debounce": "^4.0.8",
     "next": "15.3.3",
     "next-intl": "^4.1.0",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
+    "react-csv": "^2.2.2",
+    "react-data-table-component": "^7.7.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "swiper": "^11.2.8"
+    "recharts": "^3.0.2",
+    "swiper": "^11.2.8",
+    "xlsx": "^0.18.5"
   }
 }

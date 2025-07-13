@@ -18,25 +18,11 @@ const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
   return (
     <>
       <div className="d-flex align-items-center gap-3 mt-2 me-3 z-3">
-        <div className="dropdown">
-          <span
-            className=""
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            onClick={handleClick}
-            style={{ cursor: "pointer" }}
-          >
-            <i className={`fa-solid fa-gear ${spinning ? "fa-spin" : ""}`}></i>
-          </span>
-          <ul className="dropdown-menu settings">
-            <li className="">
-              <LanguageSwitcher />
-            </li>
-            <li className="">
-              <ThemeToggle />
-            </li>
-          </ul>
+        <div className="d-none d-sm-block">
+          <LanguageSwitcher />
+        </div>
+        <div className="d-none d-sm-block">
+          <ThemeToggle />
         </div>
         <div onClick={handleSearhPage}>
           <i className="fa-solid fa-magnifying-glass"></i>
@@ -159,7 +145,7 @@ const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
           </Link>
         </div>
         {/* Mobile Toggler - Hidden on md+ */}
-        <button
+        <span
           className="navbar-toggler d-lg-none border-0 bg-transparent fs-4"
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -170,7 +156,7 @@ const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
               menuOpen ? "fa-xmark rotate" : "fa-bars"
             } transition-icon`}
           ></i>
-        </button>
+        </span>
       </div>
     </>
   );

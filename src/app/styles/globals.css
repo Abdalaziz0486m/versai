@@ -1,8 +1,8 @@
 @import "variables.css";
 
 body {
-  background-color: var(--bg-100);
-  color: var(--text-100);
+  background-color: var(--bg-100) !important;
+  color: var(--text-100) !important;
 }
 
 h1,
@@ -11,28 +11,28 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-100);
+  color: var(--text-100) !important;
 }
 
 p,
 span,
 a {
-  color: var(--text-200);
+  color: var(--text-200) !important;
 }
 
 a {
   text-decoration: none;
-  color: var(--accent-100);
+  color: var(--accent-100) !important;
 }
 
 a:hover {
-  color: var(--accent-200);
+  color: var(--accent-200) !important;
 }
 
 button {
   background-color: transparent;
-  color: var(--text-100);
-  border: 1px solid var(--text-100);
+  color: var(--text-100) !important;
+  border: 1px solid var(--text-100) !important;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -40,13 +40,13 @@ button {
 }
 
 button:hover {
-  background-color: var(--text-100);
-  color: var(--primary-100);
-  border-color: var(--primary-100);
+  background-color: var(--text-100) !important;
+  color: var(--primary-100) !important;
+  border-color: var(--primary-100) !important;
 }
 
 button:disabled {
-  background-color: var(--primary-200);
+  background-color: var(--primary-200) !important;
   cursor: not-allowed;
 }
 
@@ -57,20 +57,25 @@ button:focus {
 
 input,
 textarea,
-.selectSex {
-  background-color: var(--bg-200);
-  color: var(--text-100);
-  border: 1px solid var(--primary-200);
+select {
+  background-color: var(--bg-200) !important;
+  color: var(--text-100) !important;
+  border: 1px solid var(--primary-200) !important;
   padding: 10px;
   border-radius: 5px;
 }
 
 input:focus,
 textarea:focus,
-.selectSex:focus {
-  border-color: var(--accent-100);
+select:focus {
+  border-color: var(--accent-100) !important;
   outline: none;
   box-shadow: 0 0 5px var(--shadow-accent-100) !important;
+}
+
+option:hover {
+  background-color: var(--bg-300) !important;
+  color: var(--text-100) !important;
 }
 
 .form-control {
@@ -92,35 +97,35 @@ textarea:focus,
 }
 
 .card {
-  background-color: var(--bg-200);
-  color: var(--text-100);
-  border: 1px solid var(--primary-300);
+  background-color: var(--bg-200) !important;
+  color: var(--text-100) !important;
+  border: 1px solid var(--primary-300) !important;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px var(--primary-300);
+  box-shadow: 0 2px 5px var(--primary-300) !important;
 }
 
 .card-header {
   font-size: 1.5em;
-  color: var(--text-100);
-  background-color: var(--bg-300);
+  color: var(--text-100) !important;
+  background-color: var(--bg-300) !important;
   margin-bottom: 10px;
 }
 
 .card-body {
   font-size: 1em;
-  color: var(--text-200);
+  color: var(--text-200) !important;
 }
 
 .card-footer {
   text-align: right;
   font-size: 0.9em;
-  color: var(--text-200);
-  background-color: var(--bg-300);
+  color: var(--text-200) !important;
+  background-color: var(--bg-300) !important;
 }
 
 nav {
-  background-color: var(--primary-100);
+  background-color: var(--primary-100) !important;
   color: var(--text-100);
   padding: 10px;
   display: flex;
@@ -671,7 +676,7 @@ footer {
 }
 .Factures:hover,
 .Factures2:hover {
-  background-color: #fff;
+  background-color: var(--bg-200);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
@@ -700,16 +705,6 @@ footer {
   }
 }
 
-.allProductDetail::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 140px;
-  background: linear-gradient(to bottom, #007b7b 50%, #e9e9e9 50%);
-  top: 0;
-  left: 25%;
-  border-radius: 5px;
-}
 .greenColor {
   color: var(--accent-200);
 }
@@ -779,3 +774,30 @@ footer {
 }
 
 /* End Products */
+/* للصور الكبيرة داخل .mySwiper2 */
+.mySwiper2 .swiper-slide {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.mySwiper2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* للصور الصغيرة (thumbnails) داخل .mySwiper */
+.mySwiper .swiper-slide {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.mySwiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.DetailsSlider {
+  background-color: var(--bg-200);
+}

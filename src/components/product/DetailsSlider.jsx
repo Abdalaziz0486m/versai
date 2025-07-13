@@ -14,7 +14,7 @@ export default function DetailsSlider() {
 
   return (
     <div className="DetailsSlider container">
-      <div className="row justify-content-center align-items-center">
+      <div className="row justify-content-center">
         {/* Desktop / tablet view - vertical thumbs */}
         <div className="col-2 px-1">
           <Swiper
@@ -24,11 +24,17 @@ export default function DetailsSlider() {
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Thumbs]}
-            className="mySwiper"
+            className="mySwiper h-100"
           >
             {[...Array(6)].map((_, idx) => (
               <SwiperSlide key={idx}>
-                <Image src={productImage} alt="product" />
+                <Image
+                  src={productImage}
+                  alt="product"
+                  fill
+                  sizes="(min-width: 768px) 20vw, 40vw"
+                  style={{ objectFit: "cover" }}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -43,7 +49,13 @@ export default function DetailsSlider() {
           >
             {[...Array(6)].map((_, idx) => (
               <SwiperSlide key={idx}>
-                <Image src={productImage} alt="product" className="img-fluid" />
+                <Image
+                  src={productImage}
+                  alt="product"
+                  fill
+                  sizes="(min-width: 768px) 20vw, 40vw"
+                  style={{ objectFit: "cover" }}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

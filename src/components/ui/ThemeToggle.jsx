@@ -53,7 +53,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <motion.button
+    <motion.span
       onClick={toggleTheme}
       whileTap={{ rotate: 90, scale: 0.9 }}
       transition={{ type: "spring", stiffness: 300 }}
@@ -62,13 +62,13 @@ const ThemeToggle = () => {
       style={{
         width: "42px",
         height: "42px",
-        padding: "6px",
         fontSize: "18px",
         transition: "all 0.3s ease",
       }}
     >
       {getIcon()}
-    </motion.button>
+      
+    </motion.span>
   );
 };
 

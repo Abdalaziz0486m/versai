@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { useLocale } from "next-intl"; // لو بتستخدم next-intl
+import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation"; // استيراد usePathname
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import avatar from "../../images/avatar_male.webp";
 import Image from "next/image";
@@ -35,20 +36,26 @@ const testimonials = [
 export default function Testimonials() {
   const locale = useLocale(); // "ar" or "en"
   const isRTL = locale === "ar";
+  const pathname = usePathname();
+
+  // الشرط: إخفاء العنوان لو المسار يحتوي على "product"
+  const hideTitle = pathname.includes("product");
 
   return (
     <section className="py-5 text-center">
       <div className="container">
-        <h2 className="fw-bold mb-4 border-bottom d-inline-block pb-2 border-2 border-dark">
-          {isRTL ? "آراء العملاء" : "Customer Reviews"}
-        </h2>
+        {!hideTitle && (
+          <h2 className="fw-bold mb-4 border-bottom d-inline-block pb-2 border-2 border-dark">
+            {isRTL ? "آراء العملاء" : "Customer Reviews"}
+          </h2>
+        )}
 
         <Swiper
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={1}
           navigation
-          dir={isRTL ? "rtl" : "ltr"} // Swiper RTL
+          dir={isRTL ? "rtl" : "ltr"}
           breakpoints={{
             768: { slidesPerView: 2 },
             992: { slidesPerView: 3 },

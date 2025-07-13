@@ -25,7 +25,7 @@ export default function LanguageSwitcherClient({ currentLocale }) {
   const nextLocale = currentLocale === "ar" ? "en" : "ar";
 
   return (
-    <button
+    <span
       onClick={switchLanguage}
       disabled={isPending || isLoading}
       className="btn-lang rounded-circle position-relative d-flex align-items-center justify-content-center"
@@ -57,6 +57,6 @@ export default function LanguageSwitcherClient({ currentLocale }) {
           <span className="visually-hidden">unread messages</span>
         </span>
       )}
-    </button>
+    </span>
   );
 }

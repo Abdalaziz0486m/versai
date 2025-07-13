@@ -1,6 +1,8 @@
 import { useLocale } from "next-intl";
 import Links from "./Links";
 import Logo from "./Logo";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const MobileSlideMenu = ({ setMenuOpen, menuOpen }) => {
   const locale = useLocale();
@@ -20,6 +22,10 @@ const MobileSlideMenu = ({ setMenuOpen, menuOpen }) => {
         }}
       >
         <Logo />
+        <div className="d-flex d-sm-none">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
         <ul className="navbar-nav">
           <Links setMenuOpen={setMenuOpen} />
         </ul>

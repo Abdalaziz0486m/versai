@@ -1,0 +1,268 @@
+@import url(./variables.css);
+
+/* خطوط وألوان variables جاهزة في :root */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-200);
+  color: var(--text-100);
+  direction: rtl;
+  font-family: "Cairo", "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 220px;
+  background: var(--bg-100);
+  box-shadow: 0 0 10px var(--shadow-100);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-sidebar h4 {
+  color: var(--text-100);
+  margin-bottom: 1rem;
+}
+
+.dashboard-sidebar .nav-link {
+  color: var(--text-100);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-sidebar .nav-link:hover {
+  color: var(--accent-100);
+}
+
+/* Main content */
+.dashboard-main {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header h2 {
+  color: var(--text-100);
+}
+
+.dashboard-header button {
+  background-color: var(--accent-100);
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ✅ Responsive: إخفاء الـ sidebar في الشاشات الصغيرة */
+@media (max-width: 992px) {
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0; /* لأننا RTL */
+    transform: translateX(100%);
+    z-index: 1000;
+    width: 220px;
+    height: 100%;
+    background: var(--primary-100);
+  }
+
+  /* لما ياخد class active يظهر */
+  .dashboard-sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* ممكن تعمل overlay كمان */
+  .dashboard-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .dashboard-overlay.active {
+    display: block;
+  }
+}
+
+.toggle {
+  cursor: pointer;
+  margin: 0.5em 0 0 0.5em;
+}
+
+/* تحسين الكروت */
+.card {
+  background: var(--primary-100);
+  color: var(--text-100);
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px var(--shadow-100);
+}
+
+/* تحسين الجدول */
+.dashboard-home table {
+  background: var(--primary-100);
+  color: var(--text-100);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dashboard-home th {
+  background: var(--primary-200);
+  color: var(--text-100);
+}
+
+.dashboard-home td {
+  background: var(--primary-100);
+}
+
+.dashboard-home .badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+}
+
+/* Responsive تحسين */
+@media (max-width: 768px) {
+  .dashboard-home h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-home .fs-4 {
+    font-size: 1.25rem !important;
+  }
+}
+
+.text-muted {
+  color: var(--text-200) !important;
+}
+
+.recharts-tooltip-wrapper {
+  direction: rtl; /* عشان التولتيب يظهر صح */
+}
+
+.recharts-default-tooltip {
+  background-color: var(--bg-100) !important;
+  color: var(--text-100) !important;
+  border: 1px solid var(--accent-100) !important;
+  border-radius: 0.5em !important;
+}
+
+/* خلي legend والتولتيب RTL */
+.recharts-default-legend {
+  direction: rtl;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.recharts-tooltip-wrapper {
+  direction: rtl;
+  text-align: right;
+  font-size: 0.85rem;
+}
+
+/* نخلي labels العربية أوضح */
+.recharts-pie-label-text {
+  font-size: 0.8rem;
+  fill: var(--text-100);
+}
+
+.rdt_Pagination {
+  justify-content: center !important;
+  background-color: var(--bg-200) !important;
+  color: var(--text-200) !important;
+  direction: rtl;
+}
+
+.dlOXOQ {
+  color: var(--text-100) !important;
+  fill: var(--text-100) !important;
+}
+
+.dlOXOQ:disabled {
+  color: var(--text-200) !important;
+  fill: var(--text-200) !important;
+}
+
+#pagination-first-page,
+#pagination-last-page,
+#pagination-next-page,
+#pagination-previous-page {
+  transform: rotate(180deg);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .recent-orders-print, .recent-orders-print * {
+    visibility: visible;
+  }
+  .recent-orders-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.recharts-tooltip-item{
+  color: var(--text-100) !important;
+}
+
+.dZdOzu{
+  color: var(--text-100) !important;
+  background-color: var(--bg-100) !important;
+}
+
+.kMgreK{
+  color: var(--text-100) !important;
+  background-color: var(--bg-200) !important;
+}
+
+.bYAWFJ{
+  color: var(--text-100) !important;
+  background-color: var(--bg-100) !important;
+}
+
+.fBjZMk{
+  color: var(--text-100) !important;
+  background-color: var(--bg-200) !important;
+}
+
+.form-control{
+  background-color: var(--bg-200) !important;
+  color: var(--text-100) !important;
+  border: var(--primary-100) solid 1px;
+}
+
+.form-control::placeholder{
+  color: var(--text-200) !important;
+}
+
+.cvFfSA{
+  background-color: var(--bg-100) !important;
+  color: var(--text-100) !important;
+}
+
+a.active{
+  background-color: var(--primary-100);
+  color: var(--accent-100);
+}
