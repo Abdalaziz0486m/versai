@@ -24,7 +24,7 @@ const ProductSwiper = ({ handleOpen }) => {
           240: { slidesPerView: 1 },
           320: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
+          768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
           1280: { slidesPerView: 3 },
           1440: { slidesPerView: 4 },

@@ -14,7 +14,7 @@ const Links = ({ setMenuOpen }) => {
   return (
     <>
       <li className="nav-item mb-2" onClick={handleClick}>
-        <NavLink className="nav-link" href="/" activeClassName="active" exact>
+        <NavLink className="nav-link fw-bold" href="/" activeClassName="active" exact>
           {t("home")}
         </NavLink>
       </li>

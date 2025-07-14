@@ -19,7 +19,7 @@ const ProductCard = ({ handleOpen }) => {
             <i className="fa-solid fa-heart d-none"></i>
           </div>
           <div
-            className="product-icon"
+            className="product-icon d-lg-flex d-md-none d-none"
             onClick={handleOpen}
             style={{ cursor: "pointer" }}
           >

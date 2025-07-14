@@ -135,7 +135,7 @@ nav {
 
 nav a.nav-link {
   color: var(--text-100) !important;
-  margin: 0 10px;
+  font-weight: bold !important;
 }
 
 nav a:hover {
