@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { NextIntlClientProvider, hasLocale, useLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import BootstrapClient from "@/components/ui/BootstrapConect";
 import Navbar from "@/components/layout/navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import FaviconSwitcher from "@/components/ui/FaviconSwitcher";
 import Footer from "@/components/layout/Footer";
@@ -19,7 +18,7 @@ export const metadata = {
 };
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
+  const { locale } = useLocale();
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();

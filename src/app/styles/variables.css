@@ -6,78 +6,46 @@ body {
 
 :root {
   /* Light Theme */
-  --primary-100: #ffffff;
-  --primary-200: #f0f0f0;
-  --primary-300: #dcdcdc;
+  --primary-100: #401504; /* اللون الرئيسي من اللوجو */
+  --primary-200: #66331e; /* درجة أفتح شوي */
+  --primary-300: #8c4a2e; /* درجة أفتح كمان */
 
-  --accent-100: #00a8a8;
-  --accent-200: #007b7b;
+  --accent-100: #401504; /* ممكن نستخدم نفس اللون الرئيسي كلون accent */
+  --accent-200: #66331e;
 
-  --text-100: #000000;
-  --text-200: #333333;
+  --text-100: #401504; /* لون النص الرئيسي */
+  --text-200: #52554e; /* لون السلوجن أو نص ثانوي */
 
-  --bg-100: #ffffff;
-  --bg-200: #e3f6f5;
-  --bg-300: #bae8e8;
-  --bg-100-50: #ffffff88;
+  --bg-100: #f9f5e9; /* لون الخلفية الرئيسي */
+  --bg-200: #eee6d1; /* درجة أغمق بسيطة */
+  --bg-300: #e0d3b6; /* درجة أغمق كمان */
+  --bg-100-50: #f9f5e988; /* نفس الخلفية لكن شفافة شوي */
 
-  --shadow-100: #0000001a;
-  --shadow-200: #00000033;
-  --shadow-accent-100: #00a8a866;
-  --shadow-accent-200: #007b7b4d;
+  --shadow-100: rgba(0, 0, 0, 0.1);
+  --shadow-200: rgba(0, 0, 0, 0.2);
+  --shadow-accent-100: #40150466; /* ظل بنفس لون اللوجو */
+  --shadow-accent-200: #66331e4d;
 }
 
 [data-theme="dark"] {
   /* Dark Theme */
-  --primary-100: #000000;
-  --primary-200: #1a1a1a;
-  --primary-300: #333333;
+  --primary-100: #f8e1c2;
+  --primary-200: #d8ba8e;
+  --primary-300: #b79a6b;
 
-  --accent-100: #5ffaf5;
-  --accent-200: #2cd4d4;
+  --accent-100: #f8e1c2;
+  --accent-200: #d8ba8e;
 
-  --text-100: #ffffff;
-  --text-200: #cccccc;
+  --text-100: #f8e1c2;
+  --text-200: #e0d3b6;
 
-  --bg-100: #000000;
-  --bg-200: #1a1a1a;
-  --bg-300: #2a2a2a;
-  --bg-100-50: #00000088;
+  --bg-100: #5c4f36; /* أغمق بشكل واضح */
+  --bg-200: #4b412f; /* أغمق أكتر */
+  --bg-300: #3c3427; /* أغمق زيادة */
+  --bg-100-50: #5c4f3688; /* نفس bg-100 لكن شفافة */
 
-  --shadow-100: rgba(255, 255, 255, 0.1);
-  --shadow-200: rgba(255, 255, 255, 0.2);
-  --shadow-accent-100: #5ffaf566;
-  --shadow-accent-200: #2cd4d44d;
+  --shadow-100: rgba(0, 0, 0, 0.2);
+  --shadow-200: rgba(0, 0, 0, 0.3);
+  --shadow-accent-100: #f8e1c266;
+  --shadow-accent-200: #d8ba8e4d;
 }
-
-body[lang="ar"] {
-  font-family: "Cairo", sans-serif !important;
-  .start-0 {
-    right: 0 !important;
-    left: auto !important;
-  }
-  .end-0 {
-    left: 0 !important;
-    right: auto !important;
-  }
-  --start: -1em;
-  --end: auto;
-}
-
-body[lang="en"] {
-  font-family: "Poppins", sans-serif !important;
-
-  .start-0 {
-    left: 0 !important;
-    right: auto !important;
-  }
-
-  .end-0 {
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  --start: auto;
-  --end: -1em;
-}
-
