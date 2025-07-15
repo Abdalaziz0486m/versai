@@ -42,59 +42,62 @@ export default function Testimonials() {
   const hideTitle = pathname.includes("product");
 
   return (
-    <section className="py-5 text-center">
-      <div className="container">
-        {!hideTitle && (
-          <h2 className="fw-bold mb-4 border-bottom d-inline-block pb-2 border-2 border-dark">
+    <>
+      {!hideTitle && (
+        <div className="d-flex justify-content-center">
+          <h2 className="fw-bold mb-4 border-bottom d-inline-block pb-2 border-2 border-dark ">
             {isRTL ? "آراء العملاء" : "Customer Reviews"}
           </h2>
-        )}
-
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          dir={isRTL ? "rtl" : "ltr"}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            992: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className={`card shadow-sm h-100 p-3 text-${
-                  isRTL ? "end" : "start"
-                }`}
-              >
-                <FaQuoteLeft className="text-muted fs-3 mb-2" />
-                <p className="mb-4">{item.text}</p>
-                <div className="d-flex align-items-center justify-content-between">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    className="rounded-circle border"
-                    style={{
-                      width: "48px",
-                      height: "48px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div className={`text-${isRTL ? "end" : "start"}`}>
-                    <div className="fw-bold">{item.name}</div>
-                    <div className="text-warning">
-                      {[...Array(5)].map((_, i) => (
-                        <FaStar key={i} className="me-1" />
-                      ))}
+        </div>
+      )}
+      <section className="py-5 text-center testimonials">
+        <div className="container">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            // navigation
+            dir={isRTL ? "rtl" : "ltr"}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              992: { slidesPerView: 3 },
+            }}
+          >
+            {testimonials.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className={`card shadow-sm h-100 p-3 text-${
+                    isRTL ? "end" : "start"
+                  }`}
+                >
+                  <FaQuoteLeft className="text-muted fs-3 mb-2" />
+                  <p className="mb-4">{item.text}</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      className="rounded-circle border"
+                      style={{
+                        width: "48px",
+                        height: "48px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div className={`text-${isRTL ? "end" : "start"}`}>
+                      <div className="fw-bold">{item.name}</div>
+                      <div className="text-warning">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar key={i} className="me-1" />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,4 +1,3 @@
-"use client";
 import { useLocale, useTranslations } from "next-intl";
 import SeoHead from "@/components/seo/SeoHead";
 import AdBanner from "@/components/home/AdBanner";
@@ -8,18 +7,11 @@ import Rugs from "@/components/home/Rugs";
 import NewArrivals from "@/components/home/NewArrivals";
 import Furniture from "@/components/home/Furniture";
 import Testimonials from "@/components/home/Testimonials";
-import QuickView from "@/components/quickView/QuickView";
-import { useState } from "react";
 
 export default function Home() {
   const t = useTranslations("HomePage");
   const locale = useLocale();
   const isArabic = locale === "ar";
-
-  const [active, setActive] = useState(false);
-
-  const handleOpen = () => setActive(true);
-  const handleClose = () => setActive(false);
 
   return (
     <>
@@ -41,12 +33,11 @@ export default function Home() {
       />
       <AdBanner />
       <Hero />
-      <BestSeller handleOpen={handleOpen} />
-      <NewArrivals handleOpen={handleOpen} />
-      <Rugs handleOpen={handleOpen} />
-      <Furniture handleOpen={handleOpen} />
+      <BestSeller />
+      <NewArrivals />
+      <Rugs />
+      <Furniture />
       <Testimonials />
-      <QuickView active={active} handleClose={handleClose} />
     </>
   );
 }

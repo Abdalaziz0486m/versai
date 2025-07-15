@@ -1,13 +1,15 @@
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider, hasLocale, useLocale } from "next-intl";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import QuickView from "@/components/quickView/QuickView";
 import BootstrapClient from "@/components/ui/BootstrapConect";
 import Navbar from "@/components/layout/navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/globals.css";
 import FaviconSwitcher from "@/components/ui/FaviconSwitcher";
 import Footer from "@/components/layout/Footer";
+import { QuickViewProvider } from "@/contexts/QuickViewContext";
 
 export const metadata = {
   title: "Versai",
@@ -17,23 +19,28 @@ export const metadata = {
   },
 };
 
-export default async function LocaleLayout({ children, params }) {
-  const { locale } = useLocale();
+export default function LocaleLayout({ children, params }) {
+  const locale = params.locale;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   return (
-    <NextIntlClientProvider>
+    <NextIntlClientProvider locale={locale}>
       <ThemeProvider>
-        <BootstrapClient />
-        <FaviconSwitcher />
-        <div lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <QuickViewProvider>
+          <BootstrapClient />
+          <FaviconSwitcher />
+          <div lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+            <header>
+              <Navbar />
+            </header>
+            <main>{children}</main>
+            <Footer />
+            <QuickView /> {/* هنا هيبقى ظاهر في كل الصفحات لو active = true */}
+          </div>
+        </QuickViewProvider>
       </ThemeProvider>
     </NextIntlClientProvider>
   );

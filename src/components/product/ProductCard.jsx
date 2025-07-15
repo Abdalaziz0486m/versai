@@ -3,9 +3,11 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import cardImage from "../../images/card-image.png";
 import { Link } from "@/i18n/navigation";
+import { useQuickView } from "@/contexts/QuickViewContext";
 
-const ProductCard = ({ handleOpen }) => {
+const ProductCard = () => {
   const t = useTranslations("productCard");
+  const { handleOpen } = useQuickView()
 
   return (
     <div className="product-card">

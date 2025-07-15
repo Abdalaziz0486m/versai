@@ -7,8 +7,11 @@ import Image from "next/image";
 import productImage from "../../images/card-image.png";
 import { Navigation } from "swiper/modules";
 import ProductDetails from "../product/ProductDetails";
+import { useQuickView } from "@/contexts/QuickViewContext";
 
-const QuickView = ({ active, handleClose }) => {
+
+const QuickView = () => {
+  const { active, handleClose } = useQuickView();
   return (
     <>
       <div

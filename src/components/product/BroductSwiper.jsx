@@ -10,7 +10,7 @@ import "swiper/css/autoplay"; // ✅ (اختياري، حسب الاستايل)
 
 import { Navigation, Autoplay } from "swiper/modules";
 
-const ProductSwiper = ({ handleOpen }) => {
+const ProductSwiper = () => {
   return (
     <div className="product-list">
       <Swiper
@@ -32,7 +32,7 @@ const ProductSwiper = ({ handleOpen }) => {
       >
         {[...Array(6)].map((_, i) => (
           <SwiperSlide key={i}>
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </SwiperSlide>
         ))}
       </Swiper>

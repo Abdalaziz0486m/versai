@@ -6,6 +6,7 @@ import avatar from "../../../images/avatar_male.webp";
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import RegistrationModal from "@/components/registration/modal";
 
 const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
   const t = useTranslations("nav");
@@ -75,65 +76,7 @@ const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
               data-bs-toggle="modal"
               data-bs-target="#registerModal"
             ></i>
-            <div
-              className="modal fade"
-              id="registerModal"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="position-relative text-center p-3">
-                    <div className="d-inline-block p-4 rounded-circle m-auto modal-icon">
-                      <i className="fa-regular fa-user "></i>
-                    </div>
-                    <h4
-                      className="modal-title fs-5 mt-3"
-                      id="registerModalLabel"
-                    >
-                      {t("login")}
-                    </h4>
-                    <span
-                      type="button"
-                      className="btm-close position-absolute top-0 end-0 p-3"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <i className="fa-solid fa-xmark modal-close fs-5"></i>
-                    </span>
-                  </div>
-                  <div className="modal-body">
-                    <form>
-                      <div className="mb-3">
-                        <label htmlFor="email" className="form-label">
-                          {t("email")}
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          placeholder={t("email")}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label htmlFor="password" className="form-label">
-                          {t("password")}
-                        </label>
-                        <input
-                          type="password"
-                          className="form-control"
-                          id="password"
-                          placeholder={t("password")}
-                        />
-                      </div>
-                      <button type="submit" className=" w-100">
-                        {t("login")}
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <RegistrationModal />
           </div>
         </div>
         <div className="position-relative">

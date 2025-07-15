@@ -1,17 +1,9 @@
-"use client";
 import Testimonials from "@/components/home/Testimonials";
 import ProductCard from "@/components/product/ProductCard";
-import QuickView from "@/components/quickView/QuickView";
-import { useState } from "react";
 
 const Products = () => {
-  const [active, setActive] = useState(false);
-  
-    const handleOpen = () => setActive(true);
-    const handleClose = () => setActive(false);
   return (
     <>
-      <QuickView active={active} handleClose={handleClose} />
       <div className="container">
         <div className="sctionCart">
           <div className="mt-3 d-flex oneDivCart">
@@ -39,61 +31,64 @@ const Products = () => {
         </div>
         <div className="row mt-4 mb-5">
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
           </div>
           <div className="col-xxl-3 col-lg-4 col-sm-6">
-            <ProductCard handleOpen={handleOpen} />
+            <ProductCard />
+          </div>
+          <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <ProductCard />
           </div>
         </div>
       </div>

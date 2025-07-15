@@ -230,7 +230,7 @@ nav {
 }
 
 .modal-backdrop {
-  z-index: 1;
+  z-index: 1 !important;
 }
 
 .modal-content {
@@ -868,4 +868,14 @@ footer {
 .BestSeller,
 .rugs-section {
   background-color: var(--bg-200);
+}
+
+.testimonials {
+  background-image: url(../../images/pattern.png);
+  background-repeat: repeat;
+}
+
+.registration-choice{
+  color: var(--text-200);
+  cursor: pointer;
 }
