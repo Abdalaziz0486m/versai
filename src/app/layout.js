@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
           href={isRTL ? "/css/bootstrap.rtl.min.css" : "/css/bootstrap.min.css"}
         />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

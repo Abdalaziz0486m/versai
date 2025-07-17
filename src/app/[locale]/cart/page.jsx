@@ -1,5 +1,4 @@
 import { GiSevenPointedStar } from "react-icons/gi";
-import { MdOutlineMessage } from "react-icons/md";
 
 const Cart = () => {
   return (
@@ -90,7 +89,7 @@ const Cart = () => {
             <div className="col-12 col-lg-4  mt-3">
               <div className="sendGift p-4 pt-5">
                 <div className="d-flex">
-                  <i class="fa-solid fa-gift fa-2xl  p-3"></i>
+                  <i className="fa-solid fa-gift fa-2xl  p-3"></i>
                   <h3>أرسل الطلب كهديه</h3>
                 </div>
                 <div className="pe-5">
@@ -101,7 +100,7 @@ const Cart = () => {
                 </div>
                 <div className="">
                   <button className="w-100 d-flex justify-content-center gap-2 fw-bold">
-                    <i class="fa-solid fa-gift"></i>
+                    <i className="fa-solid fa-gift"></i>
                     أرسلها كهديه
                   </button>
                 </div>

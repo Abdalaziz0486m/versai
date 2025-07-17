@@ -1,6 +1,7 @@
 "use client";
-import { useTranslations, useLocale } from "use-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Registration = ({ handleUserChoice }) => {
   const t = useTranslations("nav");
@@ -9,8 +10,72 @@ const Registration = ({ handleUserChoice }) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // نعمل style للأيقونة مرة واحدة
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { fullName, email, password, confirmPassword } = formData;
+
+    if (password !== confirmPassword) {
+      toast.error(t("passwordsDoNotMatch"));
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: fullName,
+            email,
+            password,
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || t("registrationFailed"));
+      } else {
+        toast.success(t("registrationSuccess"));
+        toast.info(t("confirmLinkSent"));
+        handleUserChoice("login");
+        // تفضية الفورم
+        setFormData({
+          fullName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(t("somethingWentWrong"));
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const eyeIconStyle = {
     position: "absolute",
     top: "50%",
@@ -26,7 +91,7 @@ const Registration = ({ handleUserChoice }) => {
         {t("register")}
       </h4>
       <div className="modal-body">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="fullName" className="form-label">
               {t("fullName")}
@@ -36,6 +101,8 @@ const Registration = ({ handleUserChoice }) => {
               className="form-control"
               id="fullName"
               placeholder={t("fullName")}
+              value={formData.fullName}
+              onChange={handleInputChange}
             />
           </div>
           <div className="mb-3">
@@ -47,10 +114,11 @@ const Registration = ({ handleUserChoice }) => {
               className="form-control"
               id="email"
               placeholder={t("email")}
+              value={formData.email}
+              onChange={handleInputChange}
             />
           </div>
 
-          {/* حقل كلمة السر */}
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
               {t("password")}
@@ -61,6 +129,8 @@ const Registration = ({ handleUserChoice }) => {
                 className="form-control"
                 id="password"
                 placeholder={t("password")}
+                value={formData.password}
+                onChange={handleInputChange}
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
@@ -74,7 +144,6 @@ const Registration = ({ handleUserChoice }) => {
             </div>
           </div>
 
-          {/* حقل تأكيد كلمة السر */}
           <div className="mb-3">
             <label htmlFor="confirmPassword" className="form-label">
               {t("confirmPassword")}
@@ -85,6 +154,8 @@ const Registration = ({ handleUserChoice }) => {
                 className="form-control"
                 id="confirmPassword"
                 placeholder={t("confirmPassword")}
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
               />
               <span
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
@@ -110,8 +181,13 @@ const Registration = ({ handleUserChoice }) => {
               {t("alreadyHaveAccount")}
             </span>
           </div>
-          <button type="submit" className="w-100">
-            {t("register")}
+
+          <button type="submit" className="w-100" disabled={loading}>
+            {loading ? (
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            ) : (
+              t("register")
+            )}
           </button>
         </form>
       </div>

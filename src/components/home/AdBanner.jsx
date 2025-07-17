@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 
-const EcommerceBanner = () => {
+const AdBanner = () => {
   const locale = useLocale(); // "ar" or "en"
   const [currentSlide, setCurrentSlide] = useState(0);
   const [bannerOffers, setBannerOffers] = useState([]);
@@ -87,4 +87,4 @@ const EcommerceBanner = () => {
   );
 };
 
-export default EcommerceBanner;
+export default AdBanner;

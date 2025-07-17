@@ -31,6 +31,11 @@ const testimonials = [
     text: "طلبت سجادة وأنتيكة، الذوق راقٍ والتعامل محترف.. أنصح وبقوة!",
     image: avatar,
   },
+  {
+    name: "Maha Alshureem",
+    text: "طلبت سجادة وأنتيكة، الذوق راقٍ والتعامل محترف.. أنصح وبقوة!",
+    image: avatar,
+  },
 ];
 
 export default function Testimonials() {

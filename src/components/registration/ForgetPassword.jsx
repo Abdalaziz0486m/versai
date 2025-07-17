@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-const ForgetPassword = () => {
+const ForgetPassword = ({ handleUserChoice }) => {
     const t = useTranslations("nav");
     return (
       <>

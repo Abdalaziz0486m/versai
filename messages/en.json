@@ -35,6 +35,7 @@
     "enterCodeInstructions": "Enter the code sent to your email",
     "resetLinkSent": "Reset link sent to your email",
     "resetPasswordSuccess": "Password reset successfully",
+    "confirmLinkSent": "Confirmation link sent to your email",
     "resetPasswordError": "An error occurred while resetting the password. Please try again.",
     "resetPasswordInstructions": "Enter your email and we will send you a link to reset your password.",
     "resetPasswordTitle": "Reset Password",
@@ -44,7 +45,11 @@
     "hidePassword": "Hide password",
     "products": "Products",
     "silk": "Silk",
-    "wool": "Wool"
+    "wool": "Wool",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "registrationFailed": "Registration failed",
+    "registrationSuccess": "Registration successful", 
+    "somethingWentWrong": "Something went wrong"
   },
   "ContactUs": {
     "title": "Contact Us"
@@ -61,7 +66,9 @@
     "price": "Price",
     "quantity": "Quantity",
     "description": "Description",
-    "EGP": "E£"
+    "EGP": "E£",
+    "haveToLogin": "You must be logged in to add products to the cart",
+    "addedToCart": "Product added to cart"
   },
   "footer": {
     "appTitle": "Download Versai App",

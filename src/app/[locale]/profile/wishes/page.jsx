@@ -34,7 +34,7 @@ const Wishes = () => {
             </li>
           </ul>
           <div className="d-flex justify-content-around basKetBtn">
-            <div className="ms-3">
+            <div className="me-3">
               <button className="">إضافة للسله</button>
             </div>
             <div className="d-flex mt-4 xmarkDiv">

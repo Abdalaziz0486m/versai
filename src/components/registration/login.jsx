@@ -1,16 +1,74 @@
 "use client";
+import { useUser } from "@/contexts/UserContext";
 import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const Login = ({ handleUserChoice }) => {
+const Login = ({ handleUserChoice, onClose }) => {
   const t = useTranslations("nav");
   const locale = useLocale();
   const isRTL = locale === "ar";
 
   const [showPassword, setShowPassword] = useState(false);
-  const [usePasswordLogin, setUsePasswordLogin] = useState(false);
+  const [usePasswordLogin, setUsePasswordLogin] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const { login } = useUser();
 
-  // style للأيقونة حسب الاتجاه
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { email, password } = formData;
+
+    if (!email || (usePasswordLogin && !password)) {
+      toast.error(t("pleaseFillAllFields") || "برجاء ملء جميع الحقول");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signin`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message || t("loginFailed"));
+      } else {
+        toast.success(t("loginSuccess"));
+        login(data.data, data.token);
+
+        onClose();
+
+        setFormData({ email: "", password: "" });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(t("somethingWentWrong"));
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const eyeIconStyle = {
     position: "absolute",
     top: "50%",
@@ -26,7 +84,7 @@ const Login = ({ handleUserChoice }) => {
         {t("login")}
       </h4>
       <div className="modal-body">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               {t("email")}
@@ -36,10 +94,11 @@ const Login = ({ handleUserChoice }) => {
               className="form-control"
               id="email"
               placeholder={t("email")}
+              value={formData.email}
+              onChange={handleInputChange}
             />
           </div>
 
-          {/* طريقة التسجيل بالرقم السري */}
           {usePasswordLogin && (
             <>
               <div className="mb-3">
@@ -52,6 +111,8 @@ const Login = ({ handleUserChoice }) => {
                     className="form-control"
                     id="password"
                     placeholder={t("password")}
+                    value={formData.password}
+                    onChange={handleInputChange}
                   />
                   <span
                     onClick={() => setShowPassword(!showPassword)}
@@ -66,19 +127,18 @@ const Login = ({ handleUserChoice }) => {
                   </span>
                 </div>
               </div>
-              <button type="submit" className="w-100 mb-2">
-                {t("login") || "تسجيل الدخول بالرقم السري"}
+              <button type="submit" className="w-100 mb-2" disabled={loading}>
+                {loading ? t("loading") : t("login")}
               </button>
             </>
           )}
 
-          {/* الزرار الأصلي يظهر فقط لما نكون مش مختارين التسجيل بالرقم السري */}
           {!usePasswordLogin && (
-            <button type="submit" className="w-100 mb-2">
-              {t("login")}
+            <button type="submit" className="w-100 mb-2" disabled={loading}>
+              {loading ? t("loading") : t("login")}
             </button>
           )}
-          {/* اللينك الي بيظهر ويخفي طريقة التسجيل بالرقم السري */}
+
           <div className="mb-3 text-center">
             <span
               className="registration-choice"
@@ -86,10 +146,11 @@ const Login = ({ handleUserChoice }) => {
               onClick={() => setUsePasswordLogin(!usePasswordLogin)}
             >
               {usePasswordLogin
-                ? " التسجيل  بالبريد الإلكتروني"
+                ? "التسجيل بالبريد الإلكتروني"
                 : "التسجيل بالرقم السري"}
             </span>
           </div>
+
           <div className="d-flex justify-content-between">
             <div className="mb-3">
               <span
@@ -99,7 +160,7 @@ const Login = ({ handleUserChoice }) => {
                 {t("createAccount")}
               </span>
             </div>
-            <div className="">
+            <div className="mb-3">
               <span
                 className="registration-choice"
                 onClick={() => handleUserChoice("forgotPassword")}

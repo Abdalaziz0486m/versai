@@ -30,7 +30,6 @@ const QuickView = () => {
                 <div className="swiper-button-prev"></div>
                 <div className="swiper-button-next"></div>
                 <Swiper
-                  loop={true}
                   spaceBetween={10}
                   className=""
                   slidesPerView={1}

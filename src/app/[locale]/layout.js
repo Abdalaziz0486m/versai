@@ -10,6 +10,9 @@ import "../styles/globals.css";
 import FaviconSwitcher from "@/components/ui/FaviconSwitcher";
 import Footer from "@/components/layout/Footer";
 import { QuickViewProvider } from "@/contexts/QuickViewContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { UserProvider } from "@/contexts/UserContext";
 
 export const metadata = {
   title: "Versai",
@@ -19,29 +22,52 @@ export const metadata = {
   },
 };
 
-export default function LocaleLayout({ children, params }) {
-  const locale = params.locale;
+export default async function LocaleLayout({ children, params }) {
+  // Await the params object before accessing its properties
+  const { locale } = await params;
 
-  if (!hasLocale(routing.locales, locale)) {
+  // Ensure locale is a string
+  const localeString = String(locale);
+  const isRTL = localeString === "ar";
+
+  if (!hasLocale(routing.locales, localeString)) {
     notFound();
   }
 
   return (
-    <NextIntlClientProvider locale={locale}>
-      <ThemeProvider>
-        <QuickViewProvider>
-          <BootstrapClient />
-          <FaviconSwitcher />
-          <div lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-            <header>
-              <Navbar />
-            </header>
-            <main>{children}</main>
-            <Footer />
-            <QuickView /> {/* هنا هيبقى ظاهر في كل الصفحات لو active = true */}
-          </div>
-        </QuickViewProvider>
-      </ThemeProvider>
+    <NextIntlClientProvider locale={localeString}>
+      <UserProvider>
+        <ThemeProvider>
+          <QuickViewProvider>
+            <BootstrapClient />
+            <FaviconSwitcher />
+            <div
+              lang={localeString}
+              dir={localeString === "ar" ? "rtl" : "ltr"}
+            >
+              <header>
+                <Navbar />
+              </header>
+              <main>{children}</main>
+              <Footer />
+              <QuickView />{" "}
+              {/* هنا هيبقى ظاهر في كل الصفحات لو active = true */}
+              <ToastContainer
+                position={isRTL ? "top-right" : "top-left"}
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={localeString === "ar"} // عشان لما اللغة عربي يبقى RTL
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+              />
+            </div>
+          </QuickViewProvider>
+        </ThemeProvider>
+      </UserProvider>
     </NextIntlClientProvider>
   );
 }

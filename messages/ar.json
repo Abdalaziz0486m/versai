@@ -34,6 +34,7 @@
     "newPassword": "كلمة مرور جديدة",
     "enterCodeInstructions": "أدخل الرمز المرسل إلى بريدك الإلكتروني",
     "resetLinkSent": "تم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني",
+    "confirmLinkSent": "تم إرسال رابط التأكيد إلى بريدك الإلكتروني",
     "resetPasswordSuccess": "تم إعادة تعيين كلمة المرور بنجاح",
     "resetPasswordError": "حدث خطأ أثناء إعادة تعيين كلمة المرور. يرجى المحاولة مرة أخرى.",
     "resetPasswordInstructions": "أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور.",
@@ -43,8 +44,15 @@
     "hidePassword": "إخفاء كلمة السر",
     "products": "المنتجات",
     "silk": "حرير",
-    "wool": "صوف"
-
+    "wool": "صوف",
+    "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+    "registrationFailed": "فشل التسجيل",
+    "registrationSuccess": "تم التسجيل بنجاح",
+    "somethingWentWrong": "حدث خطأ ما",
+    "loginFailed": "فشل تسجيل الدخول",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "pleaseFillAllFields": "برجاء ملء جميع الحقول",
+    "loading": "جارٍ التحميل..."
   },
   "ContactUs": {
     "title": "اتصل بنا"
@@ -61,7 +69,9 @@
     "price": "السعر",
     "quantity": "الكمية",
     "description": "الوصف",
-    "EGP": "ج.م"
+    "EGP": "ج.م",
+    "haveToLogin": "يجب عليك تسجيل الدخول لإضافة منتجات إلى السلة",
+    "addedToCart": "تمت إضافة المنتج إلى السلة"
   },
   "footer": {
     "appTitle": "حمل تطبيق Versai",

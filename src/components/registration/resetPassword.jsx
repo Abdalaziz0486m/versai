@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocale, useTranslations } from "use-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const ResetPassword = () => {
   const t = useTranslations("nav");
