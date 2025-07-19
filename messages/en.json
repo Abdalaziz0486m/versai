@@ -46,6 +46,7 @@
     "products": "Products",
     "silk": "Silk",
     "wool": "Wool",
+    "articles": "Articles",
     "passwordsDoNotMatch": "Passwords do not match",
     "registrationFailed": "Registration failed",
     "registrationSuccess": "Registration successful", 

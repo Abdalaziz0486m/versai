@@ -41,6 +41,15 @@ const Links = ({ setMenuOpen }) => {
           {t("wool")}
         </NavLink>
       </li>
+      <li className="nav-item" onClick={handleClick}>
+        <NavLink
+          className="nav-link"
+          href="/articles"
+          activeClassName="active"
+        >
+          {t("articles")}
+        </NavLink>
+      </li>
     </>
   );
 };
