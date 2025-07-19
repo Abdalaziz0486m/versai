@@ -1,35 +1,39 @@
 "use client";
-import { useState } from "react";
 import Login from "./login";
 import Registration from "./Registration";
 import ForgetPassword from "./ForgetPassword";
 import RegistrationCode from "./RegistrationCode";
 import ResetPassword from "./ResetPassword";
+import { useModal } from "@/contexts/ModalContext";
+import { useRouter } from "@/i18n/navigation";
+import { useEffect } from "react";
+import { useUser } from "@/contexts/UserContext";
 
-const RegistrationModal = () => {
-  const [userChoice, setUserChoice] = useState("login");
-  const [visible, setVisible] = useState(false);
-  const [closing, setClosing] = useState(false);
+const RegistrationModal = () => { 
+  const {
+    visible,
+    closing,
+    userChoice,
+    setUserChoice,
+    openModal,
+    closeModal,
+    redirectAfterLogin,
+  } = useModal();
 
-  const handleUserChoice = (choice) => setUserChoice(choice);
+  const { user } = useUser();
+  const router = useRouter();
 
-  const openModal = () => {
-    setUserChoice("login"); // دايمًا نبدأ بـ login
-    setVisible(true);
-  };
-
-  const closeModal = () => {
-    setClosing(true);
-    setTimeout(() => {
-      setVisible(false);
-      setClosing(false);
-    }, 300); // نفس مدة الأنيميشن
-  };
+  useEffect(() => {
+    if (user && redirectAfterLogin) {
+      closeModal();
+      router.push(redirectAfterLogin);
+    }
+  }, [user]);
 
   return (
     <>
-      {/* الزرار ده ممكن يكون في الناف بار أو أي مكان */}
-      <span onClick={openModal}>
+      {/* ✅ الزرار تقدر تستخدمه في الناف أو أي مكان تاني */}
+      <span onClick={() => openModal("login")}>
         <i
           className="fa-regular fa-user fs-5"
           style={{ cursor: "pointer" }}
@@ -39,7 +43,9 @@ const RegistrationModal = () => {
       {visible && (
         <div className="modal-overlay">
           <div
-            className={`modal-container p-3 ${closing ? "slide-up" : "slide-down"}`}
+            className={`modal-container p-3 ${
+              closing ? "slide-up" : "slide-down"
+            }`}
           >
             <div className="position-relative text-center p-3">
               <div className="d-inline-block p-4 rounded-circle m-auto modal-icon">
@@ -55,15 +61,15 @@ const RegistrationModal = () => {
             </div>
 
             {userChoice === "login" ? (
-              <Login handleUserChoice={handleUserChoice} onClose={closeModal} />
+              <Login handleUserChoice={setUserChoice} onClose={closeModal} />
             ) : userChoice === "forgotPassword" ? (
-              <ForgetPassword handleUserChoice={handleUserChoice} />
+              <ForgetPassword handleUserChoice={setUserChoice} />
             ) : userChoice === "registration" ? (
-              <Registration handleUserChoice={handleUserChoice} />
+              <Registration handleUserChoice={setUserChoice} />
             ) : userChoice === "registrationCode" ? (
-              <RegistrationCode handleUserChoice={handleUserChoice} />
+              <RegistrationCode handleUserChoice={setUserChoice} />
             ) : userChoice === "resetPassword" ? (
-              <ResetPassword handleUserChoice={handleUserChoice} />
+              <ResetPassword handleUserChoice={setUserChoice} />
             ) : null}
           </div>
         </div>

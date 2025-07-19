@@ -22,7 +22,7 @@ const Cart = () => {
                 <div className="col-12 col-md-5">
                   <div className="d-flex">
                     <div>
-                      <img src="" alt="" />
+                      {/* <img src="" alt="" /> */}
                     </div>
                     <div>
                       <p className="fw-bold fs-5 mb-0">
@@ -35,7 +35,7 @@ const Cart = () => {
                 <div className="col-6 col-md-3">
                   <div className="d-flex justify-content-around pluORminCart">
                     <div className="plusCart position-relative">
-                      <i class="fa-solid fa-plus fa-lg"></i>
+                      <i className="fa-solid fa-plus fa-lg"></i>
                     </div>
                     <div className="numCart position-relative">1</div>
                     <div>

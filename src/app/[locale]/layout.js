@@ -13,6 +13,7 @@ import { QuickViewProvider } from "@/contexts/QuickViewContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from "@/contexts/UserContext";
+import { ModalProvider } from "@/contexts/ModalContext";
 
 export const metadata = {
   title: "Versai",
@@ -39,32 +40,34 @@ export default async function LocaleLayout({ children, params }) {
       <UserProvider>
         <ThemeProvider>
           <QuickViewProvider>
-            <BootstrapClient />
-            <FaviconSwitcher />
-            <div
-              lang={localeString}
-              dir={localeString === "ar" ? "rtl" : "ltr"}
-            >
-              <header>
-                <Navbar />
-              </header>
-              <main>{children}</main>
-              <Footer />
-              <QuickView />{" "}
-              {/* هنا هيبقى ظاهر في كل الصفحات لو active = true */}
-              <ToastContainer
-                position={isRTL ? "top-right" : "top-left"}
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={localeString === "ar"} // عشان لما اللغة عربي يبقى RTL
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-              />
-            </div>
+            <ModalProvider>
+              <BootstrapClient />
+              <FaviconSwitcher />
+              <div
+                lang={localeString}
+                dir={localeString === "ar" ? "rtl" : "ltr"}
+              >
+                <header>
+                  <Navbar />
+                </header>
+                <main>{children}</main>
+                <Footer />
+                <QuickView />{" "}
+                {/* هنا هيبقى ظاهر في كل الصفحات لو active = true */}
+                <ToastContainer
+                  position={isRTL ? "top-right" : "top-left"}
+                  autoClose={3000}
+                  hideProgressBar={false}
+                  newestOnTop
+                  closeOnClick
+                  rtl={localeString === "ar"} // عشان لما اللغة عربي يبقى RTL
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="colored"
+                />
+              </div>
+            </ModalProvider>
           </QuickViewProvider>
         </ThemeProvider>
       </UserProvider>

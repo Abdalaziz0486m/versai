@@ -68,7 +68,9 @@
     "description": "Description",
     "EGP": "E£",
     "haveToLogin": "You must be logged in to add products to the cart",
-    "addedToCart": "Product added to cart"
+    "addedToCart": "Product added to cart",
+    "errorWhileAdding": "An error occurred while adding to cart",
+    "addedSuccessfully": "Added to cart successfully"
   },
   "footer": {
     "appTitle": "Download Versai App",

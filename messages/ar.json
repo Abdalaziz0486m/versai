@@ -71,7 +71,9 @@
     "description": "الوصف",
     "EGP": "ج.م",
     "haveToLogin": "يجب عليك تسجيل الدخول لإضافة منتجات إلى السلة",
-    "addedToCart": "تمت إضافة المنتج إلى السلة"
+    "addedToCart": "تمت إضافة المنتج إلى السلة",
+    "errorWhileAdding": "حدث خطأ أثناء الإضافة إلى السلة",
+    "addedSuccessfully": "تمت الإضافة إلى السلة بنجاح"
   },
   "footer": {
     "appTitle": "حمل تطبيق Versai",
