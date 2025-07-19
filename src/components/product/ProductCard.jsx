@@ -7,17 +7,31 @@ import { useUser } from "@/contexts/UserContext";
 import { toast } from "react-toastify";
 import ProductImage from "../../images/card-image.png";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const t = useTranslations("productCard");
   const { handleOpen } = useQuickView();
   const { user } = useUser();
   const locale = useLocale();
+  if (!product || typeof product !== "object") {
+    console.warn("🚨 المنتج غير موجود أو غير صالح:", product);
+    return null;
+  }
+  console.log("ProductCard product:", product.mainImage);
 
   return (
     <div className="product-card">
       <div className="product-image position-relative">
-        <Link href={`/products/slilk`} className="text-decoration-none">
-          <Image src={ProductImage} alt={"product"} width={300} height={300} priority/>
+        <Link
+          href={`/products/${product.slug[locale]}`}
+          className="text-decoration-none"
+        >
+          <Image
+            src={ProductImage}
+            alt={product.description[locale]}
+            width={300}
+            height={300}
+            priority
+          />
         </Link>
         <div className="d-flex justify-content-center align-items-center product-icon-wrapper">
           <div className="product-icon mx-2">
@@ -26,7 +40,7 @@ const ProductCard = () => {
           </div>
           <div
             className="product-icon d-lg-flex d-md-none d-none"
-            onClick={handleOpen}
+            onClick={() => handleOpen(product)}
             style={{ cursor: "pointer" }}
           >
             <i className="fa-solid fa-eye"></i>
@@ -34,9 +48,9 @@ const ProductCard = () => {
         </div>
       </div>
       <div className="product-details text-center p-3">
-        <h5 className="product-title"> اسم المنتج </h5>
+        <h5 className="product-title"> {product.title[locale]} </h5>
         <p className="product-price mb-2">
-          {200} {t("EGP")}
+          {product.priceRange.min} {t("EGP")}
         </p>
         <button className="add-to-cart w-100">
           <i className="fa-solid fa-basket-shopping mx-1"></i>

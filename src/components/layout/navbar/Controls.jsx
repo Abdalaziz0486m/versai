@@ -5,7 +5,6 @@ import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import avatar from "../../../images/avatar_male.webp";
 import Link from "next/link";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import RegistrationModal from "@/components/registration/RegistrationModal";
 import { useUser } from "@/contexts/UserContext"; // ✅ استيراد الكونتكست
@@ -13,8 +12,6 @@ import { useUser } from "@/contexts/UserContext"; // ✅ استيراد الكو
 const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
   const t = useTranslations("nav");
   const { user, logout } = useUser(); // ✅ جلب حالة المستخدم و دالة الخروج
-  const [isModalOpen, setModalOpen] = useState(false);
-
 
   return (
     <>
@@ -103,17 +100,10 @@ const Controls = ({ handleSearhPage, menuOpen, setMenuOpen }) => {
         ) : (
           <>
             {/* أيقونة لفتح المودال */}
-            <i
-              className="fa-regular fa-user fs-5"
-              onClick={() => setModalOpen(true)}
-              style={{ cursor: "pointer" }}
-            ></i>
+            
 
             {/* المودال نفسه */}
-            <RegistrationModal
-              isOpen={isModalOpen}
-              onClose={() => setModalOpen(false)}
-            />
+            <RegistrationModal />
           </>
         )}
 

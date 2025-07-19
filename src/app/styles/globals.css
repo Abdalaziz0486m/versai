@@ -973,3 +973,7 @@ footer {
     opacity: 0;
   }
 }
+
+.modal-container{
+  background-color: var(--bg-200);
+}

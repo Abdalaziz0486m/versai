@@ -5,12 +5,22 @@ const QuickViewContext = createContext();
 
 export function QuickViewProvider({ children }) {
   const [active, setActive] = useState(false);
+  const [product, setProduct] = useState(null);
 
-  const handleOpen = () => setActive(true);
-  const handleClose = () => setActive(false);
+  const handleOpen = (productData) => {
+    setProduct(productData);
+    setActive(true);
+  };
+
+  const handleClose = () => {
+    setProduct(null);
+    setActive(false);
+  };
 
   return (
-    <QuickViewContext.Provider value={{ active, handleOpen, handleClose }}>
+    <QuickViewContext.Provider
+      value={{ active, product, handleOpen, handleClose }}
+    >
       {children}
     </QuickViewContext.Provider>
   );

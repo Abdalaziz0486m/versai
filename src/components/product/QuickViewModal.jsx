@@ -5,13 +5,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-const QuickViewModal = ({ show, onClose, product }) => {
-  if (!show) return null;
+const QuickViewModal = () => {
+  const { active, product, handleClose } = useQuickView();
+
+  if (!active || !product) return null;
 
   return (
     <div className="custom-modal">
       <div className="custom-modal-content">
-        <button className="custom-modal-close" onClick={onClose}>
+        <button className="custom-modal-close" onClick={handleClose}>
           &times;
         </button>
         <div className="custom-modal-body">
@@ -24,7 +26,12 @@ const QuickViewModal = ({ show, onClose, product }) => {
           >
             {product.images.map((img, idx) => (
               <SwiperSlide key={idx}>
-                <Image src={img} alt={`Product Image ${idx + 1}`} width="100%" height="auto" />
+                <Image
+                  src={img}
+                  alt={`Product Image ${idx + 1}`}
+                  width="100%"
+                  height="auto"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
